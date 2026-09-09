@@ -6,15 +6,30 @@
     "test:chrome": "cypress run --browser chrome --headless",
     "test:firefox": "cypress run --browser firefox --headless",
     "test:edge": "cypress run --browser edge --headless",
-    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge"
+    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge",
+    "test:smoke": "cypress run --browser chrome --headless --expose tags=\"@smoke\"",
+    "test:regression": "cypress run --browser chrome --headless --expose tags=\"@regression\""
   },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}",
+      "cypress/support/step_definitions/**/*.{js,ts}"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
+  },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^28.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
     "cypress": "^15.21.1",
     "cypress-mochawesome-reporter": "^5.0.0",
-    "cypress-multi-reporters": "^2.0.5"
+    "cypress-multi-reporters": "^2.0.5",
+    "esbuild": "^0.28.2"
   }
 }

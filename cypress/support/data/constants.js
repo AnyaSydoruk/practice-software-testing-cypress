@@ -1,7 +1,3 @@
-export const CART_PRODUCT = "Combination Pliers";
-
-export const LANG_DE = "de";
-
 export const ROUTES = {
   home: "/",
   register: "/auth/register",
@@ -10,9 +6,9 @@ export const ROUTES = {
   checkout: "/checkout",
 };
 
-export const HOME_LINK_TEXT = {
-  en: "Home",
-  de: "Start",
+export const LANGUAGES = {
+  English: { code: "en", homeLinkText: "Home" },
+  German: { code: "de", homeLinkText: "Start" },
 };
 
 export const ACCOUNT_PAGE_TITLE = "My account";

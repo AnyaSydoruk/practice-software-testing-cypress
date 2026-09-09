@@ -10,6 +10,10 @@ class HomePage {
     cy.visit(ROUTES.home);
   }
 
+  get productTitles() {
+    return cy.get('[data-test="product-name"]');
+  }
+
   openProduct(name) {
     cy.contains('[data-test="product-name"]', name).click();
   }
